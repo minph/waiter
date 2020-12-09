@@ -1,4 +1,4 @@
-package mode
+package waiter
 
 import "github.com/nsf/termbox-go"
 
@@ -9,4 +9,3 @@ func init() {
 	termbox.SetCursor(0, 0)
 	termbox.HideCursor()
 }
-

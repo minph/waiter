@@ -1,4 +1,4 @@
-package mode
+package waiter
 
 // Trigger 触发类型
 type Trigger int

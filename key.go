@@ -1,7 +1,8 @@
-package mode
+package waiter
 
 import (
 	"fmt"
+
 	"github.com/nsf/termbox-go"
 )
 
@@ -11,13 +12,12 @@ type KeyTrigger struct {
 	onexit func()
 }
 
-
 // Wait 等待按键触发
 func (k *KeyTrigger) Wait() {
 	if len(k.tip) > 0 {
 		fmt.Println(k.tip)
 	}
-	Loop:
+Loop:
 	for {
 		switch ev := termbox.PollEvent(); ev.Type {
 		case termbox.EventKey:
@@ -34,7 +34,6 @@ func (k *KeyTrigger) Tip(tip string) Waiter {
 	k.tip = tip
 	return k
 }
-
 
 // OnExit 设置离开动作
 func (k *KeyTrigger) OnExit(onexit func()) Waiter {

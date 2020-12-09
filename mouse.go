@@ -1,7 +1,8 @@
-package mode
+package waiter
 
 import (
 	"fmt"
+
 	"github.com/nsf/termbox-go"
 )
 
@@ -16,7 +17,7 @@ func (m *MouseTrigger) Wait() {
 	if len(m.tip) > 0 {
 		fmt.Println(m.tip)
 	}
-	Loop:
+Loop:
 	for {
 		switch ev := termbox.PollEvent(); ev.Type {
 		case termbox.EventMouse:
@@ -33,7 +34,6 @@ func (m *MouseTrigger) Tip(tip string) Waiter {
 	m.tip = tip
 	return m
 }
-
 
 // OnExit 设置离开动作
 func (m *MouseTrigger) OnExit(onexit func()) Waiter {
