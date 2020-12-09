@@ -1,4 +1,4 @@
-# mode
+# Waiter
 
 一个用于暂停控制台的 golang 工具库
 
